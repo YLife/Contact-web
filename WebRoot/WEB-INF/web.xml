@@ -19,6 +19,27 @@
     <servlet-name>CheckCodeAction</servlet-name>
     <servlet-class>servlet.CheckCodeAction</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FindByIdAction</servlet-name>
+    <servlet-class>servlet.FindByIdAction</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EditAction</servlet-name>
+    <servlet-class>servlet.EditAction</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FindByIdAction2</servlet-name>
+    <servlet-class>servlet.FindByIdAction2</servlet-class>
+  </servlet>
+
+
+
   <servlet-mapping>
     <servlet-name>ListAction</servlet-name>
     <url-pattern>/list.action</url-pattern>
@@ -30,6 +51,18 @@
   <servlet-mapping>
     <servlet-name>CheckCodeAction</servlet-name>
     <url-pattern>/checkCode.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FindByIdAction</servlet-name>
+    <url-pattern>/find.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FindByIdAction2</servlet-name>
+    <url-pattern>/find2.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EditAction</servlet-name>
+    <url-pattern>/edit.action</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

@@ -2,6 +2,7 @@
 <%@page import="entity.AddressInfo"%>
 <%@page import="dao.AddressInfoDao"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ include file="session.jsp" %>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -39,7 +40,7 @@
 					<th width="25%">Id</th>
 					<th width="25%">Name</th>
 					<th width="25%">Phone</th>
-					<th>...</th>
+					<th>Operation</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -48,7 +49,10 @@
 						<td>${a.id }</td>
 						<td>${a.name }</td>
 						<td>${a.phone }</td>
-						<td></td>
+						<td>
+							<a href="find.action?id=${a.id }" class="btn btn-success">编辑联系人</a>
+							<a href="find2.action?id=${a.id }" class="btn btn-danger">删除联系人</a>
+						</td>
 					</tr>
 				</c:forEach>
 			</tbody>

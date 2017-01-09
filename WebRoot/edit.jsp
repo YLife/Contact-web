@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file="session.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'add.jsp' starting page</title>
+    <title>My JSP 'edit.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -18,24 +18,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<link rel="stylesheet" href="css/bootstrap.css" />
-	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/styles.css"/> 
 
   </head>
   
   <body>
-    <div class="container1">
-    	<h3>添加联系人</h3>
-    	<form action="add.action" method="post">
+    <div class="container">
+    	<form action="edit.action" method="post">
+    		<input type="hidden" name="id" value=${requestScope.id.id }>
     		<div class="form-group">
-    			<label>Name</label>
-    			<input type="text" name="name" class="form-control">
+    			<label>姓名:</label>
+    			<input type="text" name="name" value="${requestScope.id }" class="form-control">
     		</div>
     		<div class="form-group">
-    			<label>Phone</label>
-    			<input type="text" name="phone" class="form-control">
+    			<label>手机号码:</label>
+    			<input type="text" name="phone" value="${requestScope.id.phone }" class="form-control">
     		</div>
-    		<div class="form-group">
-    			<button class="btn btn-info">保存联系人信息</button>
+    		<div>
+    			<button class="btn btn-info">保存联系人</button>
     		</div>
     	</form>
     </div>
