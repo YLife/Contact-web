@@ -24,7 +24,7 @@ public class EditAction extends HttpServlet {
 		AddressInfo info = new AddressInfo(id, name, phone);
 		int row = dao.update(info);
 		if (row == 1) {
-			response.sendRedirect("index2.jsp");
+			response.sendRedirect("list.action");
 		}
 		out.print("修改联系人失败 !");
 	}

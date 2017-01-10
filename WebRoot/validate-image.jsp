@@ -78,5 +78,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	ImageIO.write(img, "jpg", response.getOutputStream());
     	out.close();
     %>
+    
   </body>
 </html>

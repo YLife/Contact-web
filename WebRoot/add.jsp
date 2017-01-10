@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <div class="container1">
+    <div class="container">
     	<h3>添加联系人</h3>
     	<form action="add.action" method="post">
     		<div class="form-group">
@@ -34,8 +34,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			<label>Phone</label>
     			<input type="text" name="phone" class="form-control">
     		</div>
-    		<div class="form-group">
-    			<button class="btn btn-info">保存联系人信息</button>
+    		<div class="text-right">
+    			<button class="btn btn-info">保存联系人</button>
+    			<a href="list.action" class="btn btn-default">返回</a>
     		</div>
     	</form>
     </div>

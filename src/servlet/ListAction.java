@@ -25,12 +25,10 @@ public class ListAction extends HttpServlet {
 		Pagination pag = new Pagination(request, response, rowCount);
 		//获得当前页数据
 		List<AddressInfo> data = dao.page(pag.getPageNo(), pag.getPageSize());
-		System.out.println(data.size());
 		//传数据
 		request.setAttribute("pag", pag);
 		request.setAttribute("data", data);
 		//转发
 		request.getRequestDispatcher("index2.jsp").forward(request, response);
 	}
-
 }

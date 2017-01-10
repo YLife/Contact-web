@@ -17,12 +17,16 @@ public class FindByIdAction extends HttpServlet {
 			throws ServletException, IOException {
 
 		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();
 		int id = Integer.parseInt(request.getParameter("id"));
 		AddressInfo info = dao.findById(id);
-		System.out.println(info.getName());
 		request.setAttribute("id", info);
-		response.sendRedirect("edit.jsp");
+		if ("edit".equals(request.getParameter("action"))) {
+			System.out.println(request.getParameter("action"));
+			request.getRequestDispatcher("edit.jsp").forward(request, response);			
+		}
+		if ("del".equals(request.getParameter("action"))) {
+			request.getRequestDispatcher("del.jsp").forward(request, response);
+		}
 	}
 
 }

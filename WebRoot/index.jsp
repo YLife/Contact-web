@@ -19,10 +19,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" href="css/styles.css">
 	<script>
 		function getImage(){
-			var vImg = document.getElementById("vImg");
-			//清除缓存
-			vImg.src = "validate-image.jsp?nocache=" + Math.random();
-		}
+			var vImg = document.getElementById('vImg');
+			vImg.src = 'validate-image.jsp?nocache='+ Math.random();
+		};
 	</script>
   </head>
   	
@@ -39,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		</div>
     		<div class="form-group">
     			<img id="vImg" src="validate-image.jsp" alt="" />
-	  			<a href="#" onclick="getImage()">看不清楚，换一张</a>
+	  			<a href="javascript: ;" onclick="getImage()">看不清楚，换一张</a>
     		</div>
     		<div class="form-group">
     			<label>请输入验证码：</label>

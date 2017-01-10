@@ -9,18 +9,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.AddressInfoDao;
-import entity.AddressInfo;
 
-public class FindByIdAction2 extends HttpServlet {
+public class DelAction extends HttpServlet {
 	private AddressInfoDao dao = new AddressInfoDao();
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
 		int id = Integer.parseInt(request.getParameter("id"));
-		AddressInfo info = dao.findById(id);
-		request.setAttribute("id", info);
-		request.getRequestDispatcher("del.jsp").forward(request, response);
+		int row = dao.del(id);
+		if (row == 1) {
+			response.sendRedirect("list.action");
+		}else {
+			out.print("É¾³ýÁªÏµÈËÊ§°Ü £¡");
+		}
+		
 	}
 
 }

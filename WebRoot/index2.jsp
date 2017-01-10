@@ -50,8 +50,8 @@
 						<td>${a.name }</td>
 						<td>${a.phone }</td>
 						<td>
-							<a href="find.action?id=${a.id }" class="btn btn-success">编辑联系人</a>
-							<a href="find2.action?id=${a.id }" class="btn btn-danger">删除联系人</a>
+							<a href="find.action?id=${a.id }&action=edit" class="btn btn-success">编辑联系人</a>
+							<a href="find.action?id=${a.id }&action=del" class="btn btn-danger">删除联系人</a>
 						</td>
 					</tr>
 				</c:forEach>
@@ -60,7 +60,7 @@
 		<!-- 分页区 -->
 		<div class="text-right">
 			<ul class="pagination">
-				${pag.html }
+				${requestScope.pag.html }
 			</ul>
 		</div>
 	</div>

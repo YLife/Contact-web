@@ -24,18 +24,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <div class="container">
-    	<form action="edit.action" method="post">
-    		<input type="hidden" name="id" value=${requestScope.id.id }>
+    	<form action="edit.action?id=${requestScope.id.id }" method="post">
+    		<div class="form-group">
+    			<label>编号:</label>
+	    		<input type="text" name="id" value="${requestScope.id.id }" class="form-control" disabled="disabled">
+    		</div>
     		<div class="form-group">
     			<label>姓名:</label>
-    			<input type="text" name="name" value="${requestScope.id }" class="form-control">
+    			<input type="text" name="name" value="${requestScope.id.name }" class="form-control">
     		</div>
     		<div class="form-group">
     			<label>手机号码:</label>
     			<input type="text" name="phone" value="${requestScope.id.phone }" class="form-control">
     		</div>
-    		<div>
-    			<button class="btn btn-info">保存联系人</button>
+    		<div class="text-right">
+    			<button class="btn btn-success">保存修改</button>
+    			<a href="list.action" class="btn btn-default">返回</a>
     		</div>
     	</form>
     </div>
